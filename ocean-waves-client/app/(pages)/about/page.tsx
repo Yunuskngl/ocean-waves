@@ -9,7 +9,7 @@ export default function AboutPage() {
         <div className="absolute inset-0">
           <img
             src="/images/about-hero.png"
-            alt="Ocean Waves Maritime Services"
+            alt="Ocean Waves Maritime Service"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900" />
@@ -114,7 +114,7 @@ turbocharger solution partner for the maritime and energy industries.
     <div className="grid md:grid-cols-2 gap-16 max-w-4xl mx-auto">
       
       {/* Parts Card */}
-      <Link href="/products?category=Spare Parts" className="group">
+      <Link href="/spare-parts" className="group">
         <div className="relative overflow-hidden rounded-2xl shadow-lg aspect-[4/5]">
           <img
             src="/images/turbocharger-spare-parts-industrial-warehouse.jpg"

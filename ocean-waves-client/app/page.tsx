@@ -30,7 +30,7 @@ export default function HomePage() {
         <div className="absolute inset-0" style={{ transform: `translateY(${scrollY * 0.3}px)` }}>
           <Image
             src="/images/turboreim10.png"
-            alt="Ocean Waves Maritime Services"
+            alt="Ocean Waves Maritime Service"
             fill
             className="object-cover"
             priority
@@ -44,7 +44,7 @@ export default function HomePage() {
             <h1 className="text-3xl md:text-3xl lg:text-5xl font-bold text-white mb-10 leading-[1.05]">
               <br />
               <span className="bg-gradient-to-r from-slate-100 via-white to-slate-100 bg-clip-text mb-10 text-transparent">
-                OCEAN WAVES MARITIME SERVICES
+                OCEAN WAVES MARITIME SERVICE
               </span>
             </h1>
             

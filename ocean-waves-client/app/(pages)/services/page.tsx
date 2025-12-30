@@ -289,7 +289,7 @@ and technical consultancy services.
               className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0f172a] font-bold uppercase tracking-widest px-12 py-8 text-lg rounded-lg transition-all duration-300 group"
               asChild
             >
-              <Link href="/products" className="flex items-center gap-3">
+              <Link href="/spare-parts" className="flex items-center gap-3">
                 VIEW SPARE PARTS
                 <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
               </Link>

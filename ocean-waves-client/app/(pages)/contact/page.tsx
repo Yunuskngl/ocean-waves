@@ -290,7 +290,7 @@ export default function ContactPage() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Ocean Waves Maritime Services Location"
+          title="Ocean Waves Maritime Service Location"
         />
       </section>
     </div>

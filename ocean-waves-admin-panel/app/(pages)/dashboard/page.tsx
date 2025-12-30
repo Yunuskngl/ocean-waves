@@ -669,7 +669,7 @@ export default function DashboardPage() {
                     type="text"
                     value={productForm.title}
                     onChange={(e) => setProductForm((prev) => ({ ...prev, title: e.target.value }))}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#e23e3e] focus:border-[#e23e3e] outline-none"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#e23e3e] focus:border-[#e23e3e] outline-none text-gray-900 bg-white"
                     placeholder="Ürün başlığı"
                   />
                 </div>
@@ -682,7 +682,7 @@ export default function DashboardPage() {
                     value={productForm.description}
                     onChange={(e) => setProductForm((prev) => ({ ...prev, description: e.target.value }))}
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#e23e3e] focus:border-[#e23e3e] outline-none"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#e23e3e] focus:border-[#e23e3e] outline-none text-gray-900 bg-white"
                     placeholder="Ürün açıklaması"
                   />
                 </div>
@@ -845,7 +845,7 @@ export default function DashboardPage() {
                         value={newFeature}
                         onChange={(e) => setNewFeature(e.target.value)}
                         onKeyPress={(e) => e.key === "Enter" && handleAddFeature()}
-                        className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#e23e3e] focus:border-[#e23e3e] outline-none"
+                        className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#e23e3e] focus:border-[#e23e3e] outline-none text-gray-900 bg-white"
                         placeholder="Yeni özellik ekle"
                       />
                       <button

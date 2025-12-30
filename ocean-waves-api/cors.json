@@ -1,0 +1,25 @@
+[
+    {
+      "origin": ["http://localhost:3001", "http://localhost:3000", "https://senin-domain.com"],
+      "method": ["GET", "HEAD", "PUT", "POST", "DELETE", "OPTIONS"],
+      "responseHeader": [
+        "Content-Type",
+        "Content-Length",
+        "Content-Range",
+        "Accept",
+        "Accept-Encoding",
+        "Accept-Language",
+        "Origin",
+        "Referer",
+        "User-Agent",
+        "Authorization",
+        "X-Requested-With",
+        "Access-Control-Allow-Origin",
+        "Access-Control-Allow-Methods",
+        "Access-Control-Allow-Headers",
+        "Access-Control-Expose-Headers"
+      ],
+      "maxAgeSeconds": 3600
+    }
+]
+  

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "vital-wavelet-482723-m3",
+  "private_key_id": "17f28d4cbce7810f150547746b183f9de74ee12e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDWV1MFZcU29+2C\nFzRMDXfbrvVA3xJOOgzADbw+APzYXwIWT1YLPdNsZc2dZxc156yL10EPRhS+ApSC\nD/q6TvHzLh/0+cOVQbFyo5hz7dM7SiZFMIIz636LfnvKnC2h+9pMuyYWp5Iaplla\nDdaa1lv/A+dneQYd7EBt+TpRkM2g6r1w+d+vmBoCMQgbrTvXfY3jxPWZli2Vk8Fb\n4XLqFjZ9VJfbqekWkEahlSP5CdsPohOdroR57nZwJ5zfe4UPWdOB8PG6ucjcAFwu\n1YSCxTsyeCYYo56HyqXotQy6skN8Z8aAxT2KUuyQP1dfcTy4PbIJDIalKdpCu2tG\npHNU56FZAgMBAAECggEAAtoITqt6BpFleK/zA06wKkff0w5kuRamXKTWZ7alYkaB\n2s0zBDLfPwiwPW8BW9mB9oQzPKi3+DIi29BmNi1JPiBLCo1GzvGf8I+FC0Q1fy1P\nTwnRDFHKXydG6jjW62KYfUOn5Vb/q8N/fG7nXdaKiMv6bupTwego1J7ODAcZGpqe\nrMyy6eRtKCY1qDmercOy7cVRQv9xPiErnAoGvius0uQia/YiVTTaHZgm2k/Xhfoj\n0poNOoo3CP5iuEeAAmNqlj+QFEAOu1G4I9iDw4kKkQ5c7Z5iYUmGrfhBYLArhGUj\nepfBLsjPao6kYHknpeHiHRVHBltxXQ4D7cWPX+BHUQKBgQD308XQUGWupBTcOocJ\ndWzgiFL+pNOr8YdkJcuIjrDx1GHU1oCsvZSuE9MwyowAI4Bth1SB6G5gfYKBu6Xe\ncQXmYhzWdhP2pdYxFGXDBK7DNtgX7fNsbYzAghzapBlK7c9lsOupbHhOBe/0WL/B\nj99OiDPQcFTDzFbfuurHd+2GzQKBgQDdaNovYHygjjsxfKMQXoJj/s96Bk5dolJv\nX1/3fdvnbCBksAKmBaTUnFvwdjhC8wCv8ygMxMAKC3A0fO069Wb1dpKnqf9k5rOT\nV3hEdnjkjB3qqoIo18dUlqWKYXYg93j19iUolDJTzJaEJkkAhQeU/qCpPReQBgc+\nZDM82h+MvQKBgEr9mvMBEPO6lNFbKHd1P9/lgG+rgp2Z9WUZhrAotWRH5t6XldIv\nf6j5OMOf1qNIGtmJxMmWgqfR8sa8+GEKBEYFVEKU8k+FOP4a9PwBE7zggJ0lFK6v\nq5KpDIAgfcLNmR9lXLokp3a8lzJyFHxGw8SotD0TcKLa10LV9assIATVAoGANNkh\nMyvJs50ffeltFqwoXWvl5A97RxhGqvTN+EofYjbJ6J6mkzBHrsP/of7l4P0Vzemx\nRpLz77HZP34ONgN7Zt29la2bG1+Bv4qiV10b8BmNzoSSeuM+Xe9zZftrceUAB12Q\ncwYkmSH9T1/ADxKxw5ufh6XgaO03b2oFXOIHo9UCgYAS3Iv079xwetA68tKIk+6N\nP++EJHQ7e9wtSexOZiwY1NTwZ8Eng1pj5BXrJwdWt2TF9ACPVphQHcb7uw4tCmAf\nsnRkU0Ji+HqRp8S2FjJM0vKaytEmXNVNkYFh5VQQRsN7L1H/URO2VDq6lbEfp7DP\nhwms3l7KEMmfB83n+KkAmg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "service-account@vital-wavelet-482723-m3.iam.gserviceaccount.com",
+  "client_id": "105227535952796316374",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/service-account%40vital-wavelet-482723-m3.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

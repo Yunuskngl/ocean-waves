@@ -1,0 +1,79 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  @@map("Users")
+
+  id       String  @id @default(uuid()) @db.Uuid
+  email    String  @unique
+  password String  @map("password_hash")
+
+  fullName String   @map("full_name")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt      @map("updated_at")
+  tokenVersion Int @default(1) @map("token_version")
+
+  @@index([createdAt])
+}
+
+enum TokenType {
+  ACCESS
+  REFRESH
+}
+
+model AuthToken {
+  @@map("AuthTokens")
+
+  id     String @id @default(uuid()) @db.Uuid
+  userId String @db.Uuid
+
+  token String    @unique
+  type  TokenType
+
+  expiresAt DateTime
+  revoked   Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, type])
+  @@index([expiresAt])
+}
+
+model Product {
+  @@map("Products")
+
+  id String @id @default(uuid()) @db.Uuid
+  title String
+  description String
+  image String[]
+  features String[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Inquiry {
+  @@map("Inquiries")
+
+  id String @id @default(uuid()) @db.Uuid
+  fullName String
+  email String
+  phone String
+  message String
+  subject String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

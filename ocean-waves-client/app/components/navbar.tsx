@@ -73,7 +73,7 @@ export function Navbar() {
                   {products.map((cat:Product) => (
                     <Link
                       key={cat.id}
-                      href={`/spare-parts`}
+                      href={`/${cat.id}`}
                       className="block px-6 py-3 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors border-b border-slate-800 last:border-0"
                     >
                       {cat.title}

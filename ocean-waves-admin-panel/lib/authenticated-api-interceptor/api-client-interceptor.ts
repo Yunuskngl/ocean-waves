@@ -1,9 +1,9 @@
 import axios, { AxiosError, InternalAxiosRequestConfig } from "axios";
-import { BackendErrorResponse } from "../../interface/api-error-response";
+import { BackendErrorResponse } from "../../app/interface/api-error-response";
 
 import { AuthSession } from "./auth-session";
 import { AuthRefresher } from "./auth-refresher";
-import { refreshAccessToken } from "../../service/auth";
+import { refreshAccessToken } from "../../app/service/auth";
 import { shouldAttemptTokenRefresh } from "./error-classifier";
 import { attachAccessToken, markRequestAsRetried } from "./request-metadata";
 

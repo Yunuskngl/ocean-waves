@@ -778,7 +778,7 @@ export default function DashboardPage() {
                             <div className="p-3 bg-gray-50 flex flex-col gap-2">
                               <div className="flex items-center justify-between text-xs text-gray-600">
                                 <span className="font-medium text-gray-800">Resim {index + 1}</span>
-                                <span>{index + 1} / {productForm.image.length}</span>
+                                <span>{index + 1} / {productForm.image?.length ?? 0}</span>
                               </div>
                               <div className="flex gap-2">
                                 <button
@@ -795,10 +795,10 @@ export default function DashboardPage() {
                                 </button>
                                 <button
                                   type="button"
-                                  disabled={index === productForm.image.length - 1}
+                                  disabled={index === (productForm.image?.length ?? 0) - 1}
                                   onClick={() => handleMoveImage(index, "down")}
                                   className={`flex-1 px-3 py-2 rounded-md text-xs font-medium border ${
-                                    index === productForm.image.length - 1
+                                    index === (productForm.image?.length ?? 0) - 1
                                       ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
                                       : "bg-white text-gray-700 border-gray-300 hover:border-[#e23e3e] hover:text-[#e23e3e]"
                                   }`}

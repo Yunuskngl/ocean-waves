@@ -8,6 +8,7 @@ import { Input } from "../../components/ui/input"
 import { Label } from "../../components/ui/label"
 import { Textarea } from "../../components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../components/ui/select"
+import { createInquiry } from "@/app/service/inquiries"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -23,14 +24,22 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    try {
+      await createInquiry({
+        fullName: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        subject: formData.subject,
+      })
+      setSubmitted(true)
+      setIsSubmitting(false)
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
+    } catch (error) {
+      console.log(error)
+      setIsSubmitting(false)
+    }
 
-    // Simülasyon amaçlı
-    setTimeout(() => {
-        setSubmitted(true)
-        setIsSubmitting(false)
-        setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
-        setTimeout(() => setSubmitted(false), 3000)
-    }, 1500)
   }
 
   return (

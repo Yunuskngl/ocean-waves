@@ -84,7 +84,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Follow Us & Admin */}
+          {/* Follow Us */}
           <div>
             <h3 className="text-lg font-bold text-white mb-6">Follow Us</h3>
             <div className="flex gap-4 mb-8">
@@ -104,14 +104,7 @@ export function Footer() {
               >
                 <Instagram className="h-5 w-5" />
               </a>
-            </div>
-
-            {/* Admin Login */}
-            <div className="pt-6 border-t border-white/10">
-              <Link href="/admin" className="text-xs text-white/40 hover:text-white/80 transition-colors">
-                Admin Portal Login
-              </Link>
-            </div>
+            </div>            
           </div>
         </div>
 

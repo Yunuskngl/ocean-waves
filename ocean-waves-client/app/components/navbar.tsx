@@ -11,8 +11,11 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  // Yeni: Mobilde Spare Parts açılır/kapanır state'i
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false)
+  
   const pathname = usePathname()
-  const products = useProductStore((state) => state.products);
+  const products = useProductStore((state) => state.products)
   const isHomePage = pathname === "/"
 
   useEffect(() => {
@@ -23,6 +26,11 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Mobil menüde linke tıklandığında menüyü kapatan fonksiyon
+  const handleMobileLinkClick = () => {
+    setIsMobileMenuOpen(false)
+  }
+
   const navbarBg = isHomePage ? (isScrolled ? "bg-slate-900 shadow-lg" : "bg-transparent") : "bg-slate-900 shadow-lg"
   const textColor = isHomePage && !isScrolled ? "text-white" : "text-white"
 
@@ -31,7 +39,7 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group" onClick={handleMobileLinkClick}>
             <img
               src="/images/img-0448.png"
               alt="Ocean Waves Maritime"
@@ -49,7 +57,7 @@ export function Navbar() {
               About Us
             </Link>
 
-            {/* SPARE PARTS DROPDOWN */}
+            {/* DESKTOP SPARE PARTS DROPDOWN */}
             <div
               className="relative h-full flex items-center"
               onMouseEnter={() => setIsDropdownOpen(true)}
@@ -65,12 +73,12 @@ export function Navbar() {
                 />
               </Link>
 
-              {/* Dropdown Content */}
+              {/* Desktop Dropdown Content */}
               {isDropdownOpen && (
                 <div 
                     className="absolute top-full left-0 mt-0 w-64 bg-slate-900 border border-slate-700 rounded-b-lg shadow-xl py-2 animate-in fade-in slide-in-from-top-2"
                 >
-                  {products.map((cat:Product) => (
+                  {products.map((cat: Product) => (
                     <Link
                       key={cat.id}
                       href={`/spare-parts/${cat.id}`}
@@ -108,37 +116,75 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-slate-700 bg-slate-900">
+          <div className="lg:hidden py-4 border-t border-slate-700 bg-slate-900 h-screen overflow-y-auto pb-20">
             <div className="flex flex-col gap-4 px-4">
-              <Link href="/" className="text-xl font-semibold hover:text-cyan-400 text-white">
+              <Link 
+                href="/" 
+                onClick={handleMobileLinkClick}
+                className="text-xl font-semibold hover:text-cyan-400 text-white"
+              >
                 Home
               </Link>
-              <Link href="/about" className="text-xl font-semibold hover:text-cyan-400 text-white">
+              <Link 
+                href="/about" 
+                onClick={handleMobileLinkClick}
+                className="text-xl font-semibold hover:text-cyan-400 text-white"
+              >
                 About Us
               </Link>
               
-              {/* Mobil Menü - Spare Parts */}
+              {/* MOBIL MENÜ - SPARE PARTS (ACCORDION YAPISI) */}
               <div className="space-y-2">
-                <Link href="/spare-parts" className="text-xl font-semibold hover:text-cyan-400 text-white block">
-                  Spare Parts
-                </Link>
-                <div className="pl-4 border-l-2 border-slate-700 space-y-2 mt-2">
-                    {products.map((cat:Product) => (
+                {/* Başlık ve Ok Butonu */}
+                <button 
+                  onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
+                  className="flex items-center justify-between w-full text-xl font-semibold text-white hover:text-cyan-400 group"
+                >
+                  <span>Spare Parts</span>
+                  <ChevronDown 
+                    className={`h-5 w-5 transition-transform duration-300 ${isMobileDropdownOpen ? "rotate-180" : ""}`} 
+                  />
+                </button>
+
+                {/* Açılır Kapanır Liste */}
+                {isMobileDropdownOpen && (
+                  <div className="pl-4 border-l-2 border-slate-700 space-y-3 mt-2 animate-in slide-in-from-top-2 fade-in duration-300">
+                    {/* Ana Kategori Linki */}
+                    <Link 
+                      href="/spare-parts" 
+                      onClick={handleMobileLinkClick}
+                      className="block text-cyan-400 font-medium hover:text-cyan-300"
+                    >
+                      View All Parts
+                    </Link>
+                    
+                    {/* Ürün Listesi */}
+                    {products.map((cat: Product) => (
                         <Link 
                             key={cat.id} 
-                            href={`/spare-parts`}
+                            href={`/spare-parts/${cat.id}`}
+                            onClick={handleMobileLinkClick}
                             className="block text-slate-400 hover:text-cyan-400"
                         >
                             {cat.title}
                         </Link>
                     ))}
-                </div>
+                  </div>
+                )}
               </div>
 
-              <Link href="/services" className="text-xl font-semibold hover:text-cyan-400 text-white">
+              <Link 
+                href="/services" 
+                onClick={handleMobileLinkClick}
+                className="text-xl font-semibold hover:text-cyan-400 text-white"
+              >
                 Services
               </Link>
-              <Link href="/contact" className="text-xl font-semibold hover:text-cyan-400 text-white">
+              <Link 
+                href="/contact" 
+                onClick={handleMobileLinkClick}
+                className="text-xl font-semibold hover:text-cyan-400 text-white"
+              >
                 Contact
               </Link>
             </div>
